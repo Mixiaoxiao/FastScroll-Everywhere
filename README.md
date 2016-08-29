@@ -7,6 +7,8 @@ Add the fast-scroll feature to any scrollable views: RecyclerView, ScrollView, W
 
 ![FastScroll-Everywhere](https://raw.github.com/Mixiaoxiao/FastScroll-Everywhere/master/Screenshots/FastScroll-Everywhere.jpg) 
 
+![FastScroll-Everywhere](https://raw.github.com/Mixiaoxiao/FastScroll-Everywhere/master/Screenshots/FastScroll-Everywhere.gif) 
+
 
 Sample 
 -----
