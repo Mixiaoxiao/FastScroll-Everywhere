@@ -20,13 +20,13 @@ Usage
 * Use `FastScrollRecyclerView` `FastScrollScrollView`  `FastScrollWebView`  `FastScrollListView` `FastScrollGridView`  to replace the original one.
 
 * PopupIndicator
-```java
+	```java
 		FastScrollDelegate delegate = yourFastScrollRecyclerView.getDelegate();
-		//To show PopupIndicator, your need to initIndicatorPopup first. There is no PopupIndicator by default, to avoid wasting memory.
+		//To show PopupIndicator, you need to initIndicatorPopup first. There is no PopupIndicator by default, to avoid wasting memory.
 		delegate.initIndicatorPopup(new IndicatorPopup.Builder(delegate));//create a default IndicatorPopup
 		//Change the text in IndicatorPopup
 		delegate.setIndicatorText("A"); //You had better to set only one char or use small textSize.
-```
+	```
 
 * OnFastScrollListener
 	```java
@@ -54,13 +54,13 @@ Customisation
 -----
 
 * Thumb
-```java
-	Drawable yourThumbDrawable = ...;
-	FastScrollRecyclerView yourFastScrollRecyclerView =...; 
-	boolean isDynamicHeight = true | false;
+	```java
+		Drawable yourThumbDrawable = ...;
+		FastScrollRecyclerView yourFastScrollRecyclerView =...; 
+		boolean isDynamicHeight = true | false;
 	
-	//Change the constructed function of FastScrollRecyclerView(see the source code)
-	mDelegate = new FastScrollDelegate.Builder(yourFastScrollRecyclerView)
+		//Change the constructed function of FastScrollRecyclerView(see the source code)
+		mDelegate = new FastScrollDelegate.Builder(yourFastScrollRecyclerView)
 			.width(20)//the width of thumb, in dp
 			.height(32)//the height of thumb, in dp
 			.thumbNormalColor(0x80808080)//normal color of default thumbDrawable
@@ -69,16 +69,16 @@ Customisation
 			.dynamicHeight(isDynamicHeight)//if true, the thumbHeight is computed by visible-percent of view and min-height is thumbHeight you set.
 			.build(yourFastScrollRecyclerView);
 	
-	//Or change the thumb style runtime
-	yourFastScrollRecyclerView.getDelegate().setThumbDrawable(yourThumbDrawable);//set the thumbDrawable(with state_pressed)
-	yourFastScrollRecyclerView.getDelegate().setThumbSize(20, 32);//set the thumb size, in dp
-	yourFastScrollRecyclerView.getDelegate().setThumbDynamicHeight(isDynamicHeight);
-```
+		//Or change the thumb style runtime
+		yourFastScrollRecyclerView.getDelegate().setThumbDrawable(yourThumbDrawable);//set the thumbDrawable(with state_pressed)
+		yourFastScrollRecyclerView.getDelegate().setThumbSize(20, 32);//set the thumb size, in dp
+		yourFastScrollRecyclerView.getDelegate().setThumbDynamicHeight(isDynamicHeight);
+	```
 
 * PopupIndicator
-```java
-	FastScrollDelegate delegate = yourFastScrollRecyclerView.getDelegate();
-	delegate.initIndicatorPopup(new IndicatorPopup.Builder(delegate)
+	```java
+		FastScrollDelegate delegate = yourFastScrollRecyclerView.getDelegate();
+		delegate.initIndicatorPopup(new IndicatorPopup.Builder(delegate)
 			.indicatorPopupColor(0xff03a9f4)//popup bubble color
 			.indicatorPopupSize(72)//popup bubble size
 			.indicatorTextSize(36)//text size, in dp
@@ -86,7 +86,7 @@ Customisation
 			.indicatorPopupAnimationStyle(android.R.style.Animation_Toast)//animation style (parent is android:Animation, you should change windowEnter/ExitAnimation) 
 			.build()
 		);
-```	
+	```	
 
 Extension (FastScroll-Everywhere!)
 -----
