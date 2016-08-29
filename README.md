@@ -18,14 +18,16 @@ Usage
 -----
 
 * Use `FastScrollRecyclerView` `FastScrollScrollView`  `FastScrollWebView`  `FastScrollListView` `FastScrollGridView`  to replace the original one.
+
 * PopupIndicator
-	```java
+```java
 		FastScrollDelegate delegate = yourFastScrollRecyclerView.getDelegate();
 		//To show PopupIndicator, your need to initIndicatorPopup first. There is no PopupIndicator by default, to avoid wasting memory.
 		delegate.initIndicatorPopup(new IndicatorPopup.Builder(delegate));//create a default IndicatorPopup
 		//Change the text in IndicatorPopup
 		delegate.setIndicatorText("A"); //You had better to set only one char or use small textSize.
-	```
+```
+
 * OnFastScrollListener
 	```java
 		FastScrollDelegate delegate = yourFastScrollRecyclerView.getDelegate();
@@ -89,14 +91,14 @@ Customisation
 Extension (FastScroll-Everywhere!)
 -----
 
-* If you want to add the fast-scroll feature to your `CustomScrollableView`, just copy the source code of `FastScrollRecyclerView`(or any FastScrollXxxxView) and change the super-class to your `CustomScrollableView`.
+* If you want to add the fast-scroll feature to your `CustomScrollableView`, just copy the source code of `FastScrollRecyclerView`(or any `FastScrollXxxxView`) and change the super-class to your `CustomScrollableView`.
 * Then, all done. All things are handled by `FastScrollDelegate`
 
 
 Developed By
 ------------
 
-Mixiaoxiao - <xiaochyechye@gmail.com> or <mixiaoxiaogogo@163.com>
+Mixiaoxiao(谜小小) - <xiaochyechye@gmail.com> or <mixiaoxiaogogo@163.com>
 
 
 
