@@ -24,7 +24,7 @@ Usage
 		//To show PopupIndicator, your need to initIndicatorPopup first. There is no PopupIndicator by default, to avoid wasting memory.
 		delegate.initIndicatorPopup(new IndicatorPopup.Builder(delegate));//create a default IndicatorPopup
 		//Change the text in IndicatorPopup
-		delegate.setIndicatorText("A"); //You'd better to set only one char or use small textSize.
+		delegate.setIndicatorText("A"); //You had better to set only one char or use small textSize.
 	```
 * OnFastScrollListener
 	```java
@@ -86,7 +86,7 @@ Customisation
 		);
 ```	
 
-Extension
+Extension (FastScroll-Everywhere!)
 -----
 
 * If you want to add the fast-scroll feature to your `CustomScrollableView`, just copy the source code of `FastScrollRecyclerView`(or any FastScrollXxxxView) and change the super-class to your `CustomScrollableView`.
