@@ -223,8 +223,9 @@ public class FastScrollDelegate {
 				final int touchDeltaY = Math.round(y - mDownY);
 				if(touchDeltaY != 0){
 					updateThumbRect(touchDeltaY);
+					//only touchDeltaY != 0, we save the touchY, to Avoid accuracy error
+					mDownY = y;
 				}
-				mDownY = y;
 			}
 			break;
 		}
