@@ -14,7 +14,7 @@ Screenshots
 Sample APK
 -----
 
-[FastScroll-EverywhereSample.apk](https://raw.github.com/Mixiaoxiao/FastScroll-Everywhere/master/FastScroll-Everywhere.apk)
+[FastScroll-EverywhereSample.apk](https://raw.github.com/Mixiaoxiao/FastScroll-Everywhere/master/FastScroll-Everywhere-Sample.apk)
 
 
 Usage 
@@ -29,7 +29,7 @@ Usage
 		//Change the text in IndicatorPopup
 		delegate.setIndicatorText("A"); //You'd better to set only one char or use small textSize.
 	```
-* setOnFastScrollListener
+* OnFastScrollListener
 	```java
 		FastScrollDelegate delegate = yourFastScrollRecyclerView.getDelegate();
 		delegate.setOnFastScrollListener(new OnFastScrollListener() {
