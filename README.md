@@ -5,9 +5,6 @@ Add the fast-scroll feature to any scrollable views: RecyclerView, ScrollView, W
 
 为任意可滑动的View添加快速滑动，是的，任意。
 
-Screenshots 
------
-
 ![FastScroll-Everywhere](https://raw.github.com/Mixiaoxiao/FastScroll-Everywhere/master/Screenshots/FastScroll-Everywhere.jpg) 
 
 
@@ -21,10 +18,10 @@ Usage
 -----
 
 * Use `FastScrollRecyclerView` `FastScrollScrollView`  `FastScrollWebView`  `FastScrollListView` `FastScrollGridView`  to replace the original one.
-* Show PopupIndicator
+* PopupIndicator  
 	```java
-		//To show PopupIndicator, your need to initIndicatorPopup first. There is no PopupIndicator by default, to avoid wasting memory.
 		FastScrollDelegate delegate = yourFastScrollRecyclerView.getDelegate();
+		//To show PopupIndicator, your need to initIndicatorPopup first. There is no PopupIndicator by default, to avoid wasting memory.
 		delegate.initIndicatorPopup(new IndicatorPopup.Builder(delegate));//create a default IndicatorPopup
 		//Change the text in IndicatorPopup
 		delegate.setIndicatorText("A"); //You'd better to set only one char or use small textSize.
