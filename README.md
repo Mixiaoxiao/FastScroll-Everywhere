@@ -18,7 +18,7 @@ Usage
 -----
 
 * Use `FastScrollRecyclerView` `FastScrollScrollView`  `FastScrollWebView`  `FastScrollListView` `FastScrollGridView`  to replace the original one.
-* PopupIndicator  
+* PopupIndicator
 	```java
 		FastScrollDelegate delegate = yourFastScrollRecyclerView.getDelegate();
 		//To show PopupIndicator, your need to initIndicatorPopup first. There is no PopupIndicator by default, to avoid wasting memory.
@@ -64,7 +64,7 @@ Customisation
 			.thumbNormalColor(0x80808080)//normal color of default thumbDrawable
 			.thumbPressedColor(0xff03a9f4)//pressed color of default thumbDrawable
 			.thumbDrawable(yourThumbDrawable)//the thumbDrawable(with state_pressed)
-			.dynamicHeight(isDynamicHeight)//if true, the thumbHeight is computed by visisle-percent of view and min-height is thumbHeight you set.
+			.dynamicHeight(isDynamicHeight)//if true, the thumbHeight is computed by visible-percent of view and min-height is thumbHeight you set.
 			.build(yourFastScrollRecyclerView);
 	
 	//Or change the thumb style runtime
