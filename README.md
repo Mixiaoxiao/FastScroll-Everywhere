@@ -1,11 +1,11 @@
 FastScroll-Everywhere
 ===============
 
-Add the fast-scroll feature to any scrollable views: RecyclerView, ScrollView, WebView, ListView, GridView, etc.
+Add the fast-scroll feature to any scrollable view: RecyclerView, ScrollView, WebView, ListView, GridView, etc.
 
 为任意可滑动的View添加快速滑动，是的，任意。
 
-![FastScroll-Everywhere](https://raw.github.com/Mixiaoxiao/FastScroll-Everywhere/master/Screenshots/FastScroll-Everywhere.jpg) 
+![FastScroll-Everywhere](https://raw.github.com/Mixiaoxiao/FastScroll-Everywhere/master/Screenshots/FastScroll-Everywhere.png) 
 
 Sample 
 -----

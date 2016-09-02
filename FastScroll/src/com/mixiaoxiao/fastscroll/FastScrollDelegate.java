@@ -28,13 +28,11 @@ import android.widget.AbsListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
-
 /**
  * 
- * https://github.com/Mixiaoxiao/FastScroll-Everywhere
- * FastScrollDelegate
- * @author Mixiaoxiao
- * 2016-08-28
+ * https://github.com/Mixiaoxiao/FastScroll-Everywhere FastScrollDelegate
+ * 
+ * @author Mixiaoxiao 2016-08-28
  */
 public class FastScrollDelegate {
 
@@ -44,15 +42,18 @@ public class FastScrollDelegate {
 	}
 
 	public static interface FastScrollable {
+
+		public void superOnTouchEvent(MotionEvent event);
+
 		public int superComputeVerticalScrollExtent();
 
 		public int superComputeVerticalScrollOffset();
 
 		public int superComputeVerticalScrollRange();
 
-		public void superOnTouchEvent(MotionEvent event);
+		public View getFastScrollableView();
 
-		public FastScrollDelegate getDelegate();
+		public FastScrollDelegate getFastScrollDelegate();
 
 		public void setNewFastScrollDelegate(FastScrollDelegate newDelegate);
 	}
@@ -91,12 +92,12 @@ public class FastScrollDelegate {
 	private OnFastScrollListener mFastScrollListener;
 	private boolean mIsHanlingTouchEvent = false;
 
-	private FastScrollDelegate(View view, final FastScrollable fastScrollable, int width, int height,
-			Drawable thumbDrawable, boolean isDynamicHeight) {
+	private FastScrollDelegate(final FastScrollable fastScrollable, int width, int height, Drawable thumbDrawable,
+			boolean isDynamicHeight) {
 		super();
-		view.setVerticalScrollBarEnabled(false);
-		Context context = view.getContext();
-		this.mView = view;
+		this.mView = fastScrollable.getFastScrollableView();
+		mView.setVerticalScrollBarEnabled(false);
+		Context context = mView.getContext();
 		this.mDensity = context.getResources().getDisplayMetrics().density;
 		this.mThumbMinHeight = dp2px(FASTSCROLLER_MIN_HEIGHT_DP);
 		this.mThumbRect = new Rect(0, 0, width, height);
@@ -105,24 +106,26 @@ public class FastScrollDelegate {
 		this.mScrollCache = new ScrollabilityCache(ViewConfiguration.get(context), mView);
 		this.mThumbDynamicHeight = isDynamicHeight;
 	}
-	///////////////
-	//Useful apis//
-	///////////////
-	public void setThumbDrawable(Drawable drawable){
-		if(drawable == null){
+
+	// ===========================================================
+	// Useful methods
+	// ===========================================================
+	public void setThumbDrawable(Drawable drawable) {
+		if (drawable == null) {
 			throw new IllegalArgumentException("setThumbDrawable must NOT be NULL");
 		}
 		mThumbDrawable = drawable;
 		updateThumbRect(0);
 	}
-	public void setThumbSize(int widthDp, int heightDp){
+
+	public void setThumbSize(int widthDp, int heightDp) {
 		mThumbRect.left = mThumbRect.right - dp2px(widthDp);
-		mThumbMinHeight = dp2px(heightDp); 
+		mThumbMinHeight = dp2px(heightDp);
 		updateThumbRect(0);
 	}
-	
-	public void setThumbDynamicHeight(boolean isDynamicHeight){
-		if(mThumbDynamicHeight != isDynamicHeight){
+
+	public void setThumbDynamicHeight(boolean isDynamicHeight) {
+		if (mThumbDynamicHeight != isDynamicHeight) {
 			mThumbDynamicHeight = isDynamicHeight;
 			updateThumbRect(0);
 		}
@@ -131,10 +134,10 @@ public class FastScrollDelegate {
 	public void setOnFastScrollListener(OnFastScrollListener l) {
 		mFastScrollListener = l;
 	}
-	
-	////////////
-	//Delegate//
-	////////////
+
+	// ===========================================================
+	// Delegate
+	// ===========================================================
 
 	// See View.class
 	public boolean awakenScrollBars() {
@@ -150,7 +153,7 @@ public class FastScrollDelegate {
 	public boolean awakenScrollBars(long startDelay) {
 		ViewCompat.postInvalidateOnAnimation(mView);
 		// log("awakenScrollBars call startDelay->" + startDelay);
-		if(!mIsHanlingTouchEvent){
+		if (!mIsHanlingTouchEvent) {
 			if (mScrollCache.state == ScrollabilityCache.OFF) {
 				// FIXME: this is copied from WindowManagerService.
 				// We should get this value from the system when it
@@ -174,16 +177,30 @@ public class FastScrollDelegate {
 		return false;
 	}
 
-	public boolean onInterceptTouchEvent(MotionEvent event) {
-		final int action = event.getActionMasked();
+	// ===========================================================
+	// TouchEvent Delegate
+	// ===========================================================
+	public boolean onInterceptTouchEvent(MotionEvent ev) {
+		return onInterceptTouchEventInternal(ev);
+	}
+
+	public boolean onTouchEvent(MotionEvent event) {
+		return onTouchEventInternal(event);
+	}
+
+	// ===========================================================
+	// TouchEvent Internal
+	// ===========================================================
+	private boolean onInterceptTouchEventInternal(MotionEvent ev) {
+		final int action = ev.getActionMasked();
 		if (action == MotionEvent.ACTION_DOWN) {
 			// Just check if hit the thumb
-			return onTouchEvent(event);
+			return onTouchEventInternal(ev);
 		}
 		return false;
 	}
 
-	public boolean onTouchEvent(MotionEvent event) {
+	private boolean onTouchEventInternal(MotionEvent event) {
 		final int action = event.getActionMasked();
 		final float y = event.getY();
 		switch (action) {
@@ -193,10 +210,11 @@ public class FastScrollDelegate {
 				mIsHanlingTouchEvent = false;
 				return false;
 			}
-			if(!mIsHanlingTouchEvent){
+			if (!mIsHanlingTouchEvent) {
 				updateThumbRect(0);
 				final float x = event.getX();
-				//Check if hit the thumb, Rect.contains(int x ,int y) is NOT exact
+				// Check if hit the thumb, Rect.contains(int x ,int y) is NOT
+				// exact
 				if (y >= mThumbRect.top && y <= mThumbRect.bottom && x >= mThumbRect.left && x <= mThumbRect.right) {
 					mIsHanlingTouchEvent = true;
 					mDownY = y;
@@ -208,11 +226,13 @@ public class FastScrollDelegate {
 					fakeCancelMotionEvent.setAction(MotionEvent.ACTION_CANCEL);
 					mFastScrollable.superOnTouchEvent(fakeCancelMotionEvent);
 					fakeCancelMotionEvent.recycle();
-					//update ThumbDrawable state and report OnFastScrollListener
+					// update ThumbDrawable state and report
+					// OnFastScrollListener
 					setPressedThumb(true);
-					//Call updateThumbRect to report OnFastScrollListener.onFastScrolled
+					// Call updateThumbRect to report
+					// OnFastScrollListener.onFastScrolled
 					updateThumbRect(0, true);
-					//Do NOT fade Thumb
+					// Do NOT fade Thumb
 					mView.removeCallbacks(mScrollCache);
 				}
 			}
@@ -221,9 +241,10 @@ public class FastScrollDelegate {
 		case MotionEvent.ACTION_MOVE: {
 			if (mIsHanlingTouchEvent) {
 				final int touchDeltaY = Math.round(y - mDownY);
-				if(touchDeltaY != 0){
+				if (touchDeltaY != 0) {
 					updateThumbRect(touchDeltaY);
-					//only touchDeltaY != 0, we save the touchY, to Avoid accuracy error
+					// only touchDeltaY != 0, we save the touchY, to Avoid
+					// accuracy error
 					mDownY = y;
 				}
 			}
@@ -238,7 +259,7 @@ public class FastScrollDelegate {
 			}
 			break;
 		}
-		}//End switch
+		}// End switch
 		if (mIsHanlingTouchEvent) {
 			mView.invalidate();
 			mView.getParent().requestDisallowInterceptTouchEvent(true);
@@ -247,11 +268,11 @@ public class FastScrollDelegate {
 		return false;
 	}
 
-
-	// //////////
-	// Delegate//
-	// //////////
-	public void dispatchDraw(Canvas canvas) {
+	// ===========================================================
+	// Delegate
+	// ===========================================================
+	/** Call after View.dispatchDraw() **/
+	public void dispatchDrawOver(Canvas canvas) {
 		onDrawScrollBars(canvas);
 	}
 
@@ -274,12 +295,14 @@ public class FastScrollDelegate {
 	 */
 	public void onVisibilityChanged(View changedView, int visibility) {
 		if (visibility == View.VISIBLE) {
-			//This compat method is interesting, KK has method isAttachedToWindow
+			// This compat method is interesting, KK has method
+			// isAttachedToWindow
 			// < KK is view.getWindowToken() != null
-			if(ViewCompat.isAttachedToWindow(mView)){//just is mAttachInfo != null
+			if (ViewCompat.isAttachedToWindow(mView)) {
+				// Same as mAttachInfo != null
 				initialAwakenScrollBars();
 			}
-			
+
 		}
 	}
 
@@ -289,14 +312,18 @@ public class FastScrollDelegate {
 		}
 	}
 
+	// ===========================================================
+	// Internal
+	// ===========================================================
+
 	private void onDrawScrollBars(Canvas canvas) {
 		boolean invalidate = false;
-		if(mIsHanlingTouchEvent){
+		if (mIsHanlingTouchEvent) {
 			mThumbDrawable.setAlpha(255);
-		}else{
+		} else {
 			// Copy from View.class
 			final ScrollabilityCache cache = mScrollCache;
-//			cache.scrollBar = mThumbDrawable;
+			// cache.scrollBar = mThumbDrawable;
 			final int state = cache.state;
 			if (state == ScrollabilityCache.OFF) {
 				return;
@@ -320,21 +347,21 @@ public class FastScrollDelegate {
 				mThumbDrawable.setAlpha(255);
 			}
 		}
-		
+
 		// Draw the thumb
 		if (updateThumbRect(0)) {
 			final int scrollY = mView.getScrollY();
 			final int scrollX = mView.getScrollX();
-			mThumbDrawable.setBounds(mThumbRect.left + scrollX, mThumbRect.top + scrollY, 
-					mThumbRect.right + scrollX, mThumbRect.bottom + scrollY);
+			mThumbDrawable.setBounds(mThumbRect.left + scrollX, mThumbRect.top + scrollY, mThumbRect.right + scrollX,
+					mThumbRect.bottom + scrollY);
 			mThumbDrawable.draw(canvas);
 		}
 		if (invalidate) {
 			mView.invalidate();
 		}
 
-	} 
-	
+	}
+
 	private void setPressedThumb(boolean pressed) {
 		mThumbDrawable.setState(pressed ? DRAWABLE_STATE_PRESSED : DRAWABLE_STATE_DEFAULT);
 		mView.invalidate();
@@ -354,17 +381,21 @@ public class FastScrollDelegate {
 
 		}
 	}
-	
-	private boolean updateThumbRect(int touchDeltaY){
+
+	private boolean updateThumbRect(int touchDeltaY) {
 		return updateThumbRect(touchDeltaY, false);
 	}
 
 	/**
 	 * updateThumbRect
-	 * @param touchDeltaY ,if touchDeltaY != 0, will report FastScrollListener.onFastScrolled  
-	 * @param forceReportFastScrolled, if true, will force report FastScrollListener.onFastScrolled   
+	 * 
+	 * @param touchDeltaY
+	 *            ,if touchDeltaY != 0, will report
+	 *            FastScrollListener.onFastScrolled
+	 * @param forceReportFastScrolled
+	 *            , if true, will force report FastScrollListener.onFastScrolled
 	 * @return false:Thumb return false means no need to draw thumb
-	 */ 
+	 */
 	private boolean updateThumbRect(int touchDeltaY, boolean forceReportFastScrolled) {
 		final int thumbWidth = mThumbRect.width();
 		mThumbRect.right = mView.getWidth();
@@ -407,18 +438,18 @@ public class FastScrollDelegate {
 			final float newScrollPercent = newThumbTop * 1f / maxThumbTop;// 百分比
 			final int newScrollOffset = Math.round((scrollRange - scrollExtent) * newScrollPercent);
 			final int viewScrollDeltaY = newScrollOffset - scrollOffset;
-			if(mView instanceof AbsListView){
-				//Call scrollBy to AbsListView , not work correctly
-				((AbsListView)mView).smoothScrollBy(viewScrollDeltaY, 0);
-			}else{
+			if (mView instanceof AbsListView) {
+				// Call scrollBy to AbsListView , not work correctly
+				((AbsListView) mView).smoothScrollBy(viewScrollDeltaY, 0);
+			} else {
 				mView.scrollBy(0, viewScrollDeltaY);
 
 			}
 			if (mFastScrollListener != null) {
 				mFastScrollListener.onFastScrolled(mView, this, touchDeltaY, viewScrollDeltaY, newScrollPercent);
 			}
-		}else{
-			if(forceReportFastScrolled){
+		} else {
+			if (forceReportFastScrolled) {
 				if (mFastScrollListener != null) {
 					mFastScrollListener.onFastScrolled(mView, this, 0, 0, scrollPercent);
 				}
@@ -439,7 +470,7 @@ public class FastScrollDelegate {
 		public final int scrollBarFadeDuration;
 
 		// public ScrollBarDrawable scrollBar;
-//		public Drawable scrollBar;
+		// public Drawable scrollBar;
 		public float[] interpolatorValues;
 		public View host;
 
@@ -506,13 +537,13 @@ public class FastScrollDelegate {
 		}
 	}
 
-	public void initIndicatorPopup(IndicatorPopup indicatorPopup){
+	public void initIndicatorPopup(IndicatorPopup indicatorPopup) {
 		mIndicatorPopup = indicatorPopup;
 	}
 
-	// ////////////////
-	// IndicatorPopup//
-	// ////////////////
+	// ===========================================================
+	// IndicatorPopup
+	// ===========================================================
 	public static class IndicatorPopup {
 
 		public static class Builder {
@@ -673,14 +704,14 @@ public class FastScrollDelegate {
 
 	}
 
-	// ///////////
-	// Builder////
-	// ///////////
+	// ==================
+	// Builder
+	// ==================
 
-	private static final int FASTSCROLLER_WIDTH_DP = 20;// 12;
-	private static final int FASTSCROLLER_MIN_HEIGHT_DP = 32;
-	private static final int FASTSCROLLER_THUMB_WIDTH = 4;
-	private static final int FASTSCROLLER_THUMB_INSET_TOP_BOTTOM_RIGHT = 4;
+	public static int FASTSCROLLER_WIDTH_DP = 20;// 12;
+	public static int FASTSCROLLER_MIN_HEIGHT_DP = 32;
+	public static int FASTSCROLLER_THUMB_WIDTH = 4;
+	public static int FASTSCROLLER_THUMB_INSET_TOP_BOTTOM_RIGHT = 4;
 
 	public static int COLOR_THUMB_NORMAL = 0x80808080;
 	public static int COLOR_THUMB_PRESSED = 0xff03a9f4;// 0xff45c01a;
@@ -692,7 +723,7 @@ public class FastScrollDelegate {
 
 	public static class Builder {
 		private final float density;
-		private final View view;
+		private final FastScrollable fastScrollable;
 		private int width;
 		private int height;
 		private boolean isDynamicHeight = true;
@@ -700,10 +731,10 @@ public class FastScrollDelegate {
 		private int thumbNormalColor = COLOR_THUMB_NORMAL;
 		private int thumbPressedColor = COLOR_THUMB_PRESSED;
 
-		public Builder(View view) {
+		public Builder(FastScrollable fastScrollable) {
 			super();
-			this.view = view;
-			this.density = view.getContext().getResources().getDisplayMetrics().density;
+			this.fastScrollable = fastScrollable;
+			this.density = fastScrollable.getFastScrollableView().getContext().getResources().getDisplayMetrics().density;
 			width = dp2px(FASTSCROLLER_WIDTH_DP);
 			height = dp2px(FASTSCROLLER_MIN_HEIGHT_DP);
 
@@ -739,11 +770,11 @@ public class FastScrollDelegate {
 			return this;
 		}
 
-		public FastScrollDelegate build(FastScrollable fastScrollable) {
+		public FastScrollDelegate build() {
 			if (this.thumbDrawable == null) {
 				this.thumbDrawable = makeDefaultThumbDrawable();
 			}
-			return new FastScrollDelegate(view, fastScrollable, width, height, thumbDrawable, isDynamicHeight);
+			return new FastScrollDelegate(fastScrollable, width, height, thumbDrawable, isDynamicHeight);
 		}
 
 		private Drawable makeDefaultThumbDrawable() {
@@ -751,7 +782,7 @@ public class FastScrollDelegate {
 			GradientDrawable pressedDrawable = new GradientDrawable();
 			pressedDrawable.setColor(thumbPressedColor);
 			final float radius = width / 2f;
-			final int inset = dp2px(FASTSCROLLER_THUMB_INSET_TOP_BOTTOM_RIGHT);// padding
+			final int inset = dp2px(FASTSCROLLER_THUMB_INSET_TOP_BOTTOM_RIGHT);// inset
 			final int insetLeft = width - inset - dp2px(FASTSCROLLER_THUMB_WIDTH);
 			pressedDrawable.setCornerRadius(radius);
 			stateListDrawable.addState(DRAWABLE_STATE_PRESSED, new InsetDrawable(pressedDrawable, insetLeft, inset,

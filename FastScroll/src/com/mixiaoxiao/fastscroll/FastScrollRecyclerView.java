@@ -10,99 +10,96 @@ import android.view.View;
 
 import com.mixiaoxiao.fastscroll.FastScrollDelegate.FastScrollable;
 
-
 /**
- * https://github.com/Mixiaoxiao/FastScroll-Everywhere
- * FastScrollRecyclerView
- * @author Mixiaoxiao
- * 2016-08-28
+ * https://github.com/Mixiaoxiao/FastScroll-Everywhere FastScrollRecyclerView
+ * 
+ * @author Mixiaoxiao 2016-08-31
  */
 public class FastScrollRecyclerView extends RecyclerView implements FastScrollable {
 
-	private FastScrollDelegate mDelegate;
+	private FastScrollDelegate mFastScrollDelegate;
+
+	// ===========================================================
+	// Constructors
+	// ===========================================================
 
 	public FastScrollRecyclerView(Context context) {
 		super(context);
-		init(context);
+		createFastScrollDelegate(context);
 	}
 
 	public FastScrollRecyclerView(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		init(context);
+		createFastScrollDelegate(context);
 	}
 
 	public FastScrollRecyclerView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
-		init(context);
+		createFastScrollDelegate(context);
 	}
 
-	private void init(Context context) {
-		mDelegate = new FastScrollDelegate.Builder(this).build(this); 
-		
+	// ===========================================================
+	// createFastScrollDelegate
+	// ===========================================================
+
+	private void createFastScrollDelegate(Context context) {
+		mFastScrollDelegate = new FastScrollDelegate.Builder(this).build();
 	}
 
-	// //////////
-	// Delegate//
-	// //////////
-	
+	// ===========================================================
+	// Delegate
+	// ===========================================================
+
 	@Override
 	public boolean onInterceptTouchEvent(MotionEvent ev) {
-		if (mDelegate.onInterceptTouchEvent(ev)) {
-			return true;
-		}
-		return super.onInterceptTouchEvent(ev);
+		return mFastScrollDelegate.onInterceptTouchEvent(ev);
 	}
 
 	@SuppressLint("ClickableViewAccessibility")
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
-		if (mDelegate.onTouchEvent(event)) {
-			// Handle touchEvent by Delegate
-			return true;
-		}
-		return super.onTouchEvent(event);
-	}
-
-	@Override
-	protected boolean awakenScrollBars() {
-		//Do NOT call super.awakenScrollBars()
-		return mDelegate.awakenScrollBars();
-	}
-
-	@Override
-	protected void dispatchDraw(Canvas canvas) {
-		super.dispatchDraw(canvas);
-		mDelegate.dispatchDraw(canvas);
+		return mFastScrollDelegate.onTouchEvent(event);
 	}
 
 	@Override
 	protected void onAttachedToWindow() {
 		super.onAttachedToWindow();
-		mDelegate.onAttachedToWindow();
-	}
-	@Override
-	protected void onDetachedFromWindow() {
-		super.onDetachedFromWindow();
-		mDelegate.onDetachedFromWindow();
+		mFastScrollDelegate.onAttachedToWindow();
 	}
 
 	@Override
 	protected void onVisibilityChanged(View changedView, int visibility) {
 		super.onVisibilityChanged(changedView, visibility);
-		if (mDelegate != null) {
-			mDelegate.onVisibilityChanged(changedView, visibility);
+		if (mFastScrollDelegate != null) {
+			mFastScrollDelegate.onVisibilityChanged(changedView, visibility);
 		}
 	}
 
 	@Override
 	protected void onWindowVisibilityChanged(int visibility) {
 		super.onWindowVisibilityChanged(visibility);
-		mDelegate.onWindowVisibilityChanged(visibility);
+		mFastScrollDelegate.onWindowVisibilityChanged(visibility);
 	}
 
-	// //////////////////////////
-	// ViewInternalSuperMethods//
-	// //////////////////////////
+	@Override
+	protected boolean awakenScrollBars() {
+		return mFastScrollDelegate.awakenScrollBars();
+	}
+
+	@Override
+	protected void dispatchDraw(Canvas canvas) {
+		super.dispatchDraw(canvas);
+		mFastScrollDelegate.dispatchDrawOver(canvas);
+	}
+
+	// ===========================================================
+	// FastScrollable IMPL, ViewInternalSuperMethods
+	// ===========================================================
+
+	@Override
+	public void superOnTouchEvent(MotionEvent event) {
+		super.onTouchEvent(event);
+	}
 
 	@Override
 	public int superComputeVerticalScrollExtent() {
@@ -120,22 +117,29 @@ public class FastScrollRecyclerView extends RecyclerView implements FastScrollab
 	}
 
 	@Override
-	public void superOnTouchEvent(MotionEvent event) {
-		super.onTouchEvent(event);
+	public View getFastScrollableView() {
+		return this;
+	}
+
+	/**
+	 * @deprecated use {@link #getFastScrollDelegate()} instead
+	 */
+	public FastScrollDelegate getDelegate() {
+		return getFastScrollDelegate();
 	}
 
 	@Override
-	public FastScrollDelegate getDelegate() {
-		return mDelegate;
+	public FastScrollDelegate getFastScrollDelegate() {
+		return mFastScrollDelegate;
 	}
 
 	@Override
 	public void setNewFastScrollDelegate(FastScrollDelegate newDelegate) {
-		if(newDelegate == null){
+		if (newDelegate == null) {
 			throw new IllegalArgumentException("setNewFastScrollDelegate must NOT be NULL.");
 		}
-		mDelegate.onDetachedFromWindow();
-		mDelegate = newDelegate;
+		mFastScrollDelegate.onDetachedFromWindow();
+		mFastScrollDelegate = newDelegate;
 		newDelegate.onAttachedToWindow();
 	}
 
