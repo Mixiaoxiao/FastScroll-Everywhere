@@ -52,13 +52,19 @@ public class FastScrollRecyclerView extends RecyclerView implements FastScrollab
 
 	@Override
 	public boolean onInterceptTouchEvent(MotionEvent ev) {
-		return mFastScrollDelegate.onInterceptTouchEvent(ev);
+		if (mFastScrollDelegate.onInterceptTouchEvent(ev)) {
+			return true;
+		}
+		return super.onInterceptTouchEvent(ev);
 	}
 
 	@SuppressLint("ClickableViewAccessibility")
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
-		return mFastScrollDelegate.onTouchEvent(event);
+		if (mFastScrollDelegate.onTouchEvent(event)) {
+			return true;
+		}
+		return super.onTouchEvent(event);
 	}
 
 	@Override
