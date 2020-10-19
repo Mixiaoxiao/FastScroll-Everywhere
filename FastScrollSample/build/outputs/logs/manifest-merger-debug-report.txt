@@ -1,0 +1,192 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:2:1-23:12
+MERGED from [:FastScroll] E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-13:12
+MERGED from [com.android.support:design:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\783cfab24d5cfc6e094bacba4ae30e62\design-28.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\e40b447d30b072eb58673d400b78e568\appcompat-v7-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\12adc55b59d3136f2c8653c34c11faff\recyclerview-v7-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\8685a629e1f58216389c32386bca7832\support-v4-25.3.1\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\7d9556e304df36b9ba64946033f22d5a\support-fragment-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\e55713b9fade125db57836763649bdcb\animated-vector-drawable-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\3e31e22e853ea56b964a6298f411d4c3\support-core-ui-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\ab931f1650f6d31ccbbd9a040783614f\support-core-utils-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\393ab06dbf79956701a77a3fdebaa056\support-vector-drawable-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\3a314b9d4ca6ce8e36bf6ef4ae156340\transition-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\492094e21c4346dc7335b59e2634cc75\support-media-compat-25.3.1\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:loader:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\0757430979eb6a7d5f0428047d2bc45b\loader-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\a5f5ee67fad793a7db05adb53bf6d217\viewpager-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\09054b50537167a0c0f22cb6b10fc7ea\coordinatorlayout-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\6bb02e54b5664c5948ff12e41965b807\drawerlayout-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\4289147e079c11f7af519c47312b04df\slidingpanelayout-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\310c64fc4038f0097b18b87a10ff5bad\customview-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\0c3c44c3b1233536503c688dbcdd2af5\swiperefreshlayout-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\1f87ec8abc141a134f853ad79b5e2d5b\asynclayoutinflater-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\01293dd27601f35049057cf9e790148a\support-compat-28.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\3d36e9b5a6565a011164ca35c2571d1a\versionedparcelable-28.0.0\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\2f6750683b387ff11e3018f661330536\cursoradapter-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\eb1b0b8817a6fdee8ffb57e5a2a6ce49\cardview-v7-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\682ea14fa2087e91804f237560972c61\runtime-1.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\51e1741f68dde63892b968d5845a3f90\documentfile-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\b3ecf764d4a9e169ad4c3a54d23e756f\localbroadcastmanager-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\d1e9537cffa4d6eaae11b310227db87c\print-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\b49515b891e62e87bbcf2f932aac1ff6\viewmodel-1.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\9e3ff49ce6a60291005fd82c8ff61949\interpolator-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\567723b68b675f678cfa40679a3172aa\livedata-1.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\f03a5afa503eefcdab2ec259384da5fa\livedata-core-1.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\23290d83dcdbb8d2c3ac1cb03f656b1f\runtime-1.1.1\AndroidManifest.xml:17:1-22:12
+INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:2:1-23:12
+	package
+		ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:3:5-47
+		INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml
+		INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml
+		ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:2:1-23:12
+		INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml
+		ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:2:1-23:12
+		INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:6:5-67
+	android:name
+		ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:6:22-64
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:7:5-81
+	android:name
+		ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:7:22-78
+application
+ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:9:5-21:19
+MERGED from [:FastScroll] E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-20
+MERGED from [:FastScroll] E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-20
+MERGED from [com.android.support:design:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\783cfab24d5cfc6e094bacba4ae30e62\design-28.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\783cfab24d5cfc6e094bacba4ae30e62\design-28.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\8685a629e1f58216389c32386bca7832\support-v4-25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\8685a629e1f58216389c32386bca7832\support-v4-25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\492094e21c4346dc7335b59e2634cc75\support-media-compat-25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\492094e21c4346dc7335b59e2634cc75\support-media-compat-25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\01293dd27601f35049057cf9e790148a\support-compat-28.0.0\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\01293dd27601f35049057cf9e790148a\support-compat-28.0.0\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\3d36e9b5a6565a011164ca35c2571d1a\versionedparcelable-28.0.0\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\3d36e9b5a6565a011164ca35c2571d1a\versionedparcelable-28.0.0\AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\01293dd27601f35049057cf9e790148a\support-compat-28.0.0\AndroidManifest.xml:22:18-91
+	android:label
+		ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:11:9-41
+	android:allowBackup
+		ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:10:9-35
+	android:theme
+		ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:12:9-40
+activity#com.mixiaoxiao.fastscroll.sample.MainActivity
+ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:13:9-20:20
+	android:label
+		ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:15:13-45
+	android:name
+		ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:14:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:16:13-19:29
+action#android.intent.action.MAIN
+ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:17:17-69
+	android:name
+		ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:17:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:18:17-77
+	android:name
+		ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml:18:27-74
+uses-sdk
+INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml
+INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml
+MERGED from [:FastScroll] E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:FastScroll] E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\783cfab24d5cfc6e094bacba4ae30e62\design-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\783cfab24d5cfc6e094bacba4ae30e62\design-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\e40b447d30b072eb58673d400b78e568\appcompat-v7-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\e40b447d30b072eb58673d400b78e568\appcompat-v7-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\12adc55b59d3136f2c8653c34c11faff\recyclerview-v7-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\12adc55b59d3136f2c8653c34c11faff\recyclerview-v7-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\8685a629e1f58216389c32386bca7832\support-v4-25.3.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\8685a629e1f58216389c32386bca7832\support-v4-25.3.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\7d9556e304df36b9ba64946033f22d5a\support-fragment-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\7d9556e304df36b9ba64946033f22d5a\support-fragment-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\e55713b9fade125db57836763649bdcb\animated-vector-drawable-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\e55713b9fade125db57836763649bdcb\animated-vector-drawable-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\3e31e22e853ea56b964a6298f411d4c3\support-core-ui-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\3e31e22e853ea56b964a6298f411d4c3\support-core-ui-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\ab931f1650f6d31ccbbd9a040783614f\support-core-utils-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\ab931f1650f6d31ccbbd9a040783614f\support-core-utils-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\393ab06dbf79956701a77a3fdebaa056\support-vector-drawable-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\393ab06dbf79956701a77a3fdebaa056\support-vector-drawable-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\3a314b9d4ca6ce8e36bf6ef4ae156340\transition-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\3a314b9d4ca6ce8e36bf6ef4ae156340\transition-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\492094e21c4346dc7335b59e2634cc75\support-media-compat-25.3.1\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\492094e21c4346dc7335b59e2634cc75\support-media-compat-25.3.1\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:loader:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\0757430979eb6a7d5f0428047d2bc45b\loader-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\0757430979eb6a7d5f0428047d2bc45b\loader-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\a5f5ee67fad793a7db05adb53bf6d217\viewpager-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\a5f5ee67fad793a7db05adb53bf6d217\viewpager-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\09054b50537167a0c0f22cb6b10fc7ea\coordinatorlayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\09054b50537167a0c0f22cb6b10fc7ea\coordinatorlayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\6bb02e54b5664c5948ff12e41965b807\drawerlayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\6bb02e54b5664c5948ff12e41965b807\drawerlayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\4289147e079c11f7af519c47312b04df\slidingpanelayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\4289147e079c11f7af519c47312b04df\slidingpanelayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\310c64fc4038f0097b18b87a10ff5bad\customview-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\310c64fc4038f0097b18b87a10ff5bad\customview-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\0c3c44c3b1233536503c688dbcdd2af5\swiperefreshlayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\0c3c44c3b1233536503c688dbcdd2af5\swiperefreshlayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\1f87ec8abc141a134f853ad79b5e2d5b\asynclayoutinflater-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\1f87ec8abc141a134f853ad79b5e2d5b\asynclayoutinflater-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\01293dd27601f35049057cf9e790148a\support-compat-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\01293dd27601f35049057cf9e790148a\support-compat-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\3d36e9b5a6565a011164ca35c2571d1a\versionedparcelable-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\3d36e9b5a6565a011164ca35c2571d1a\versionedparcelable-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\2f6750683b387ff11e3018f661330536\cursoradapter-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\2f6750683b387ff11e3018f661330536\cursoradapter-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\eb1b0b8817a6fdee8ffb57e5a2a6ce49\cardview-v7-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\eb1b0b8817a6fdee8ffb57e5a2a6ce49\cardview-v7-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\682ea14fa2087e91804f237560972c61\runtime-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\682ea14fa2087e91804f237560972c61\runtime-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\51e1741f68dde63892b968d5845a3f90\documentfile-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\51e1741f68dde63892b968d5845a3f90\documentfile-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\b3ecf764d4a9e169ad4c3a54d23e756f\localbroadcastmanager-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\b3ecf764d4a9e169ad4c3a54d23e756f\localbroadcastmanager-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\d1e9537cffa4d6eaae11b310227db87c\print-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\d1e9537cffa4d6eaae11b310227db87c\print-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\b49515b891e62e87bbcf2f932aac1ff6\viewmodel-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\b49515b891e62e87bbcf2f932aac1ff6\viewmodel-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\9e3ff49ce6a60291005fd82c8ff61949\interpolator-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\9e3ff49ce6a60291005fd82c8ff61949\interpolator-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\567723b68b675f678cfa40679a3172aa\livedata-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\567723b68b675f678cfa40679a3172aa\livedata-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\f03a5afa503eefcdab2ec259384da5fa\livedata-core-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\f03a5afa503eefcdab2ec259384da5fa\livedata-core-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\23290d83dcdbb8d2c3ac1cb03f656b1f\runtime-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\23290d83dcdbb8d2c3ac1cb03f656b1f\runtime-1.1.1\AndroidManifest.xml:20:5-44
+INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml
+INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:support-v4:25.3.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\8685a629e1f58216389c32386bca7832\support-v4-25.3.1\AndroidManifest.xml:23:9-51
+	android:targetSdkVersion
+		INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml
+		ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml
+		INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml
+		ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml
+		INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScrollSample\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:support-v4:25.3.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\8685a629e1f58216389c32386bca7832\support-v4-25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\492094e21c4346dc7335b59e2634cc75\support-media-compat-25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\492094e21c4346dc7335b59e2634cc75\support-media-compat-25.3.1\AndroidManifest.xml:25:5-27:34
+	android:value
+		ADDED from [com.android.support:support-v4:25.3.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\8685a629e1f58216389c32386bca7832\support-v4-25.3.1\AndroidManifest.xml:27:9-31
+	android:name
+		ADDED from [com.android.support:support-v4:25.3.1] C:\Users\Anees\.gradle\caches\transforms-2\files-2.1\8685a629e1f58216389c32386bca7832\support-v4-25.3.1\AndroidManifest.xml:26:9-47

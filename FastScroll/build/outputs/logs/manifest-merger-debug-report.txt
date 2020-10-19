@@ -1,0 +1,39 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml:1:1-6:12
+INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml:1:1-6:12
+INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml:1:1-6:12
+INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml:1:1-6:12
+INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml:1:1-6:12
+INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml:1:1-6:12
+INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml:1:1-6:12
+	package
+		ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml:2:5-40
+		INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml
+		INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml
+		ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml:1:1-6:12
+		INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml
+		ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml:1:1-6:12
+		INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml:1:11-69
+application
+ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml:4:5-20
+uses-sdk
+INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml
+INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml
+INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml
+INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml
+		ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml
+		INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml
+		ADDED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml
+		INJECTED from E:\Android\GitRepo\FastScroll-Everywhere\FastScroll\src\main\AndroidManifest.xml
