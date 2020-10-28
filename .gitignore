@@ -1,3 +1,6 @@
+/.gradle/*
+/.idea/*
+/build/*
 /FastScrollSample/build/*
 /FastScroll/build/*
 /local.properties
@@ -5,8 +8,6 @@
 Thumbs.db
 ehthumbs.db
 Desktop.ini
-
-$RECYCLE.BIN/
 
 .DS_Store
 .AppleDouble
