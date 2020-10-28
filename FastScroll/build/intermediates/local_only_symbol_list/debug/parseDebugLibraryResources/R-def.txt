@@ -1,3 +1,0 @@
-R_DEF: Internal format may change without notice
-local
-drawable __divider_transparent_6dp

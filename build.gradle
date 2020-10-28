@@ -1,6 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 buildscript {
+
     repositories {
         jcenter()
         google()
@@ -8,22 +8,87 @@ buildscript {
             url "https://maven.google.com"
         }
         mavenLocal()
+        mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.3'
-
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
         classpath 'com.google.gms:google-services:4.3.3'
+
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
     }
+
+
 }
 
 allprojects {
     repositories {
         jcenter()
+        mavenCentral()
         google()
         maven {
             url "https://maven.google.com"
         }
     }
+}
+
+tasks.withType(Javadoc).all { enabled = false }
+
+/*
+apply plugin: 'com.jfrog.bintray'
+
+bintray {
+    user = 'bintray_user'
+    key = 'bintray_api_key'
+    //user = System.getenv('BINTRAY_USER')
+    //key = System.getenv('BINTRAY_KEY')
+    publications = ['release']
+    pkg {
+        repo = 'anees4ever'
+        name = 'com.mixiaoxiao.fastscroll'
+        userOrg = 'anees4ever'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/anees4ever/FastScroll-Everywhere'
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                // Applies the component for the release build variant.
+                from components.release
+                // You can then customize attributes of the publication as shown below.
+                groupId = 'com.mixiaoxiao.fastscroll'
+                artifactId = 'FastScroll-Everywhere'
+                version = '1.0'
+            }
+            // Creates a Maven publication called “debug”.
+            debug(MavenPublication) {
+                // Applies the component for the debug build variant.
+                from components.debug
+                groupId = 'com.mixiaoxiao.fastscroll'
+                artifactId = 'FastScroll-Everywhere'
+                version = '1.0'
+            }
+        }
+    }
+}
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            from components.java
+            groupId 'com.mixiaoxiao.fastscroll'
+            artifactId 'FastScroll-Everywhere'
+            version '1.0'
+        }
+    }
+}
+*/
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }

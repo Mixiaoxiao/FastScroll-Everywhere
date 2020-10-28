@@ -14,22 +14,6 @@ import android.view.ViewGroup;
 import java.util.HashSet;
 import java.util.List;
 
-/**
- * A {@link RecyclerView.LayoutManager} implementation
- * that places children in a two-dimensional grid, sized to a fixed column count
- * value. User scrolling is possible in both horizontal and vertical directions
- * to view the data set.
- *
- * <p>The column count is controllable via {@link #setTotalColumnCount(int)}. The layout manager
- * will generate the number of rows necessary to accommodate the data set based on
- * the fixed column count.
- *
- * <p>This manager does make some assumptions to simplify the implementation:
- * <ul>
- *     <li>All child views are assumed to be the same size</li>
- *     <li>The window of visible views is a constant</li>
- * </ul>
- */
 public class FixedGridLayoutManager extends RecyclerView.LayoutManager {
 
     private static final String TAG = FixedGridLayoutManager.class.getSimpleName();
@@ -62,55 +46,23 @@ public class FixedGridLayoutManager extends RecyclerView.LayoutManager {
     private int mFirstChangedPosition;
     private int mChangedPositionCount;
 
-    /**
-     * Set the number of columns the layout manager will use. This will
-     * trigger a layout update.
-     * @param count Number of columns.
-     */
+
     public void setTotalColumnCount(int count) {
         mTotalColumnCount = count;
         requestLayout();
     }
 
-    /*
-     * You must return true from this method if you want your
-     * LayoutManager to support anything beyond "simple" item
-     * animations. Enabling this causes onLayoutChildren() to
-     * be called twice on each animated change; once for a
-     * pre-layout, and again for the real layout.
-     */
     @Override
     public boolean supportsPredictiveItemAnimations() {
         return true;
     }
 
-    /*
-     * Called by RecyclerView when a view removal is triggered. This is called
-     * before onLayoutChildren() in pre-layout if the views removed are not visible. We
-     * use it in this case to inform pre-layout that a removal took place.
-     *
-     * This method is still called if the views removed were visible, but it will
-     * happen AFTER pre-layout.
-     */
     @Override
     public void onItemsRemoved(RecyclerView recyclerView, int positionStart, int itemCount) {
         mFirstChangedPosition = positionStart;
         mChangedPositionCount = itemCount;
     }
 
-    /*
-     * This method is your initial call from the framework. You will receive it when you
-     * need to start laying out the initial set of views. This method will not be called
-     * repeatedly, so don't rely on it to continually process changes during user
-     * interaction.
-     *
-     * This method will be called when the data set in the adapter changes, so it can be
-     * used to update a layout based on a new item count.
-     *
-     * If predictive animations are enabled, you will see this called twice. First, with
-     * state.isPreLayout() returning true to lay out children in their initial conditions.
-     * Then again to lay out children in their final locations.
-     */
     @Override
     public void onLayoutChildren(RecyclerView.Recycler recycler, RecyclerView.State state) {
         //We have nothing to show for an empty data set but clear any existing views
@@ -282,11 +234,6 @@ public class FixedGridLayoutManager extends RecyclerView.LayoutManager {
         removeAllViews();
     }
 
-    /*
-     * Rather than continuously checking how many views we can fit
-     * based on scroll offsets, we simplify the math by computing the
-     * visible grid as what will initially fit on screen, plus one.
-     */
     private void updateWindowSizing() {
         mVisibleColumnCount = (getHorizontalSpace() / mDecoratedChildWidth) + 1;
         if (getHorizontalSpace() % mDecoratedChildWidth > 0) {
@@ -320,11 +267,6 @@ public class FixedGridLayoutManager extends RecyclerView.LayoutManager {
         if (mFirstVisiblePosition < 0) mFirstVisiblePosition = 0;
         if (mFirstVisiblePosition >= getItemCount()) mFirstVisiblePosition = (getItemCount() - 1);
 
-        /*
-         * First, we will detach all existing views from the layout.
-         * detachView() is a lightweight operation that we can use to
-         * quickly reorder views without a full add/remove.
-         */
         SparseArray<View> viewCache = new SparseArray<View>(getChildCount());
         int startLeftOffset = emptyLeft;
         int startTopOffset = emptyTop;
@@ -361,10 +303,6 @@ public class FixedGridLayoutManager extends RecyclerView.LayoutManager {
             }
         }
 
-        /*
-         * Next, we advance the visible position based on the fill direction.
-         * DIRECTION_NONE doesn't advance the position in any direction.
-         */
         switch (direction) {
             case DIRECTION_START:
                 mFirstVisiblePosition--;
@@ -380,25 +318,11 @@ public class FixedGridLayoutManager extends RecyclerView.LayoutManager {
                 break;
         }
 
-        /*
-         * Next, we supply the grid of items that are deemed visible.
-         * If these items were previously there, they will simply be
-         * re-attached. New views that must be created are obtained
-         * from the Recycler and added.
-         */
         int leftOffset = startLeftOffset;
         int topOffset = startTopOffset;
 
         for (int i = 0; i < getVisibleChildCount(); i++) {
             int nextPosition = positionOfIndex(i);
-
-            /*
-             * When a removal happens out of bounds, the pre-layout positions of items
-             * after the removal are shifted to their final positions ahead of schedule.
-             * We have to track off-screen removals and shift those positions back
-             * so we can properly lay out all current (and appearing) views in their
-             * initial locations.
-             */
             int offsetPositionDelta = 0;
             if (state.isPreLayout()) {
                 int offsetPosition = nextPosition;
@@ -423,30 +347,14 @@ public class FixedGridLayoutManager extends RecyclerView.LayoutManager {
             //Layout this position
             View view = viewCache.get(nextPosition);
             if (view == null) {
-                /*
-                 * The Recycler will give us either a newly constructed view,
-                 * or a recycled view it has on-hand. In either case, the
-                 * view will already be fully bound to the data by the
-                 * adapter for us.
-                 */
                 view = recycler.getViewForPosition(nextPosition);
                 addView(view);
 
-                /*
-                 * Update the new view's metadata, but only when this is a real
-                 * layout pass.
-                 */
                 if (!state.isPreLayout()) {
                     LayoutParams lp = (LayoutParams) view.getLayoutParams();
                     lp.row = getGlobalRowOfPosition(nextPosition);
                     lp.column = getGlobalColumnOfPosition(nextPosition);
                 }
-
-                /*
-                 * It is prudent to measure/layout each new view we
-                 * receive from the Recycler. We don't have to do
-                 * this for views we are just re-arranging.
-                 */
                 measureChildWithMargins(view, 0, 0);
                 layoutDecorated(view, leftOffset, topOffset,
                         leftOffset + mDecoratedChildWidth,
@@ -470,24 +378,12 @@ public class FixedGridLayoutManager extends RecyclerView.LayoutManager {
                 leftOffset += mDecoratedChildWidth;
             }
         }
-
-        /*
-         * Finally, we ask the Recycler to scrap and store any views
-         * that we did not re-attach. These are views that are not currently
-         * necessary because they are no longer visible.
-         */
         for (int i=0; i < viewCache.size(); i++) {
             final View removingView = viewCache.valueAt(i);
             recycler.recycleView(removingView);
         }
     }
 
-    /*
-     * You must override this method if you would like to support external calls
-     * to shift the view to a given adapter position. In our implementation, this
-     * is the same as doing a fresh layout with the given position as the top-left
-     * (or first visible), so we simply set that value and trigger onLayoutChildren()
-     */
     @Override
     public void scrollToPosition(int position) {
         if (position >= getItemCount()) {
@@ -503,12 +399,6 @@ public class FixedGridLayoutManager extends RecyclerView.LayoutManager {
         requestLayout();
     }
 
-    /*
-     * You must override this method if you would like to support external calls
-     * to animate a change to a new adapter position. The framework provides a
-     * helper scroller implementation (LinearSmoothScroller), which we leverage
-     * to do the animation calculations.
-     */
     @Override
     public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, final int position) {
         if (position >= getItemCount()) {
@@ -516,18 +406,7 @@ public class FixedGridLayoutManager extends RecyclerView.LayoutManager {
             return;
         }
 
-        /*
-         * LinearSmoothScroller's default behavior is to scroll the contents until
-         * the child is fully visible. It will snap to the top-left or bottom-right
-         * of the parent depending on whether the direction of travel was positive
-         * or negative.
-         */
         LinearSmoothScroller scroller = new LinearSmoothScroller(recyclerView.getContext()) {
-            /*
-             * LinearSmoothScroller, at a minimum, just need to know the vector
-             * (x/y distance) to travel in order to get from the current positioning
-             * to the target.
-             */
             @Override
             public PointF computeScrollVectorForPosition(int targetPosition) {
                 final int rowOffset = getGlobalRowOfPosition(targetPosition)
@@ -542,21 +421,13 @@ public class FixedGridLayoutManager extends RecyclerView.LayoutManager {
         startSmoothScroll(scroller);
     }
 
-    /*
-     * Use this method to tell the RecyclerView if scrolling is even possible
-     * in the horizontal direction.
-     */
     @Override
     public boolean canScrollHorizontally() {
         //We do allow scrolling
         return true;
     }
 
-    /*
-     * This method describes how far RecyclerView thinks the contents should scroll horizontally.
-     * You are responsible for verifying edge boundaries, and determining if this scroll
-     * event somehow requires that new views be added or old views get recycled.
-     */
+
     @Override
     public int scrollHorizontallyBy(int dx, RecyclerView.Recycler recycler, RecyclerView.State state) {
         if (getChildCount() == 0) {
@@ -614,30 +485,15 @@ public class FixedGridLayoutManager extends RecyclerView.LayoutManager {
             }
         }
 
-        /*
-         * Return value determines if a boundary has been reached
-         * (for edge effects and flings). If returned value does not
-         * match original delta (passed in), RecyclerView will draw
-         * an edge effect.
-         */
         return -delta;
     }
 
-    /*
-     * Use this method to tell the RecyclerView if scrolling is even possible
-     * in the vertical direction.
-     */
     @Override
     public boolean canScrollVertically() {
         //We do allow scrolling
         return true;
     }
 
-    /*
-     * This method describes how far RecyclerView thinks the contents should scroll vertically.
-     * You are responsible for verifying edge boundaries, and determining if this scroll
-     * event somehow requires that new views be added or old views get recycled.
-     */
     @Override
     public int scrollVerticallyBy(int dy, RecyclerView.Recycler recycler, RecyclerView.State state) {
         if (getChildCount() == 0) {
