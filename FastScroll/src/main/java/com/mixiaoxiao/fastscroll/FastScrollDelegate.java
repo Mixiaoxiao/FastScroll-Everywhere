@@ -400,14 +400,14 @@ public class FastScrollDelegate {
 		final int thumbWidth = mThumbRect.width();
 		mThumbRect.right = mView.getWidth();
 		mThumbRect.left = mThumbRect.right - thumbWidth;
-		final int scrollRange = mFastScrollable.superComputeVerticalScrollRange();// 整体的全部高度
-		if (scrollRange <= 0) {// no content, 仅在有内容的时候绘制thumb
+		final int scrollRange = mFastScrollable.superComputeVerticalScrollRange();
+		if (scrollRange <= 0) {// no content,
 			return false;
 		}
-		final int scrollOffset = mFastScrollable.superComputeVerticalScrollOffset();// 上方已经滑动出本身范围的高度
-		final int scrollExtent = mFastScrollable.superComputeVerticalScrollExtent();// 当前显示区域的高度
+		final int scrollOffset = mFastScrollable.superComputeVerticalScrollOffset();
+		final int scrollExtent = mFastScrollable.superComputeVerticalScrollExtent();
 		final int scrollMaxOffset = scrollRange - scrollExtent;
-		if (scrollMaxOffset <= 0) {// can not scroll, 内容部分不够或刚好充满
+		if (scrollMaxOffset <= 0) {
 			return false;
 		}
 		final float scrollPercent = scrollOffset * 1f / (scrollMaxOffset);
@@ -425,7 +425,7 @@ public class FastScrollDelegate {
 			mIndicatorPopup.setOffset(mView.getWidth() - mIndicatorPopup.getPopupSize() - mThumbRect.width(),
 					-viewHeight + mThumbRect.centerY() - mIndicatorPopup.getPopupSize());
 		}
-		if (touchDeltaY != 0) {// compute the ScrollOffset, 按touchDeltaY计算滚动
+		if (touchDeltaY != 0) {// compute the ScrollOffset,
 			int newThumbTop = thumbTop + touchDeltaY;
 			final int minThumbTop = 0;
 			final int maxThumbTop = viewHeight - thumbHeight;
@@ -435,7 +435,7 @@ public class FastScrollDelegate {
 				newThumbTop = minThumbTop;
 			}
 
-			final float newScrollPercent = newThumbTop * 1f / maxThumbTop;// 百分比
+			final float newScrollPercent = newThumbTop * 1f / maxThumbTop;
 			final int newScrollOffset = Math.round((scrollRange - scrollExtent) * newScrollPercent);
 			final int viewScrollDeltaY = newScrollOffset - scrollOffset;
 			if (mView instanceof AbsListView) {
